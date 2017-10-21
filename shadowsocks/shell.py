@@ -191,10 +191,7 @@ def get_config(is_local):
             elif key == '--forbidden-ip':
                 config['forbidden_ip'] = to_str(value).split(',')
             elif key in ('-h', '--help'):
-                if is_local:
-                    print_local_help()
-                else:
-                    print_server_help()
+                print_help(is_local)
                 sys.exit(0)
             elif key == '--version':
                 print_shadowsocks()
